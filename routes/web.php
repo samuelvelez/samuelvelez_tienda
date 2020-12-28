@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*Route::resource('/producto', 'ProductoController')->only([
+    'index', 'show', 'create', 'store', 'edit', 'update'
+]);*/
+
+Route::get('/producto', 'ProductoController@index');
+Route::get('/producto/token', 'ProductoController@show');
+Route::post('/producto/store', 'ProductoController@store');
