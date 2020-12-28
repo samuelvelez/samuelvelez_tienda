@@ -16,7 +16,7 @@ class ProductoController extends Controller
   
 
     public function index(Request $request){
-        $productos = Productos::where('estado','1')->get();
+        $productos = Productos::where('estado','1')->paginate(5);
 
         return $productos;
     }
